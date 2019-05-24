@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.TList = new System.Windows.Forms.ComboBox();
             this.push = new System.Windows.Forms.Button();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer = new System.Windows.Forms.Timer(this.components);
             this.timecount = new System.Windows.Forms.Label();
             this.countdown = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -48,26 +48,32 @@
             // 
             // push
             // 
-            this.push.Location = new System.Drawing.Point(10, 76);
+            this.push.Location = new System.Drawing.Point(10, 119);
             this.push.Name = "push";
             this.push.Size = new System.Drawing.Size(218, 60);
             this.push.TabIndex = 1;
             this.push.Text = "담그기!";
             this.push.UseVisualStyleBackColor = true;
+            this.push.Click += new System.EventHandler(this.Push_Click);
+            // 
+            // timer
+            // 
+            this.timer.Interval = 1000;
+            this.timer.Tick += new System.EventHandler(this.Timer_Tick);
             // 
             // timecount
             // 
             this.timecount.AutoSize = true;
-            this.timecount.Location = new System.Drawing.Point(11, 48);
+            this.timecount.Location = new System.Drawing.Point(12, 53);
             this.timecount.Name = "timecount";
-            this.timecount.Size = new System.Drawing.Size(41, 12);
+            this.timecount.Size = new System.Drawing.Size(95, 48);
             this.timecount.TabIndex = 2;
-            this.timecount.Text = "시간 : ";
+            this.timecount.Text = "홍차 : 2분\r\n녹차 : 3분\r\n루이보스차 : 5분\r\n국화차 : 2분";
             // 
             // countdown
             // 
             this.countdown.Font = new System.Drawing.Font("굴림", 20F);
-            this.countdown.Location = new System.Drawing.Point(10, 154);
+            this.countdown.Location = new System.Drawing.Point(10, 206);
             this.countdown.Name = "countdown";
             this.countdown.ReadOnly = true;
             this.countdown.Size = new System.Drawing.Size(100, 38);
@@ -76,7 +82,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(95, 235);
+            this.label1.Location = new System.Drawing.Point(98, 324);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(133, 12);
             this.label1.TabIndex = 4;
@@ -86,7 +92,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(240, 256);
+            this.ClientSize = new System.Drawing.Size(240, 345);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.countdown);
             this.Controls.Add(this.timecount);
@@ -96,6 +102,7 @@
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "티백메이커";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -105,7 +112,7 @@
 
         private System.Windows.Forms.ComboBox TList;
         private System.Windows.Forms.Button push;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.Label timecount;
         private System.Windows.Forms.TextBox countdown;
         private System.Windows.Forms.Label label1;
