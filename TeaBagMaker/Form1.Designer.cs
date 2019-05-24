@@ -29,48 +29,73 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.TList = new System.Windows.Forms.ComboBox();
+            this.push = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timecount = new System.Windows.Forms.Label();
+            this.countdown = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // TList
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(13, 13);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 20);
-            this.comboBox1.TabIndex = 0;
+            this.TList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TList.FormattingEnabled = true;
+            this.TList.Location = new System.Drawing.Point(13, 13);
+            this.TList.Name = "TList";
+            this.TList.Size = new System.Drawing.Size(218, 20);
+            this.TList.TabIndex = 0;
             // 
-            // button1
+            // push
             // 
-            this.button1.Location = new System.Drawing.Point(13, 49);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.push.Location = new System.Drawing.Point(10, 76);
+            this.push.Name = "push";
+            this.push.Size = new System.Drawing.Size(218, 60);
+            this.push.TabIndex = 1;
+            this.push.Text = "담그기!";
+            this.push.UseVisualStyleBackColor = true;
+            // 
+            // timecount
+            // 
+            this.timecount.AutoSize = true;
+            this.timecount.Location = new System.Drawing.Point(11, 48);
+            this.timecount.Name = "timecount";
+            this.timecount.Size = new System.Drawing.Size(41, 12);
+            this.timecount.TabIndex = 2;
+            this.timecount.Text = "시간 : ";
+            // 
+            // countdown
+            // 
+            this.countdown.Font = new System.Drawing.Font("굴림", 20F);
+            this.countdown.Location = new System.Drawing.Point(10, 154);
+            this.countdown.Name = "countdown";
+            this.countdown.ReadOnly = true;
+            this.countdown.Size = new System.Drawing.Size(100, 38);
+            this.countdown.TabIndex = 3;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 91);
+            this.label1.Location = new System.Drawing.Point(95, 235);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 12);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "label1";
+            this.label1.Size = new System.Drawing.Size(133, 12);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "2019-05-24 3204 김수민";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(240, 256);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.countdown);
+            this.Controls.Add(this.timecount);
+            this.Controls.Add(this.push);
+            this.Controls.Add(this.TList);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "티백메이커";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -78,9 +103,11 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox TList;
+        private System.Windows.Forms.Button push;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label timecount;
+        private System.Windows.Forms.TextBox countdown;
         private System.Windows.Forms.Label label1;
     }
 }
